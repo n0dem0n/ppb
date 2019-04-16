@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Smartcanteen
+    </ion-title>
+    <ion-chip routerLink='/login-penjual' slot="end">
+        <ion-label>Login</ion-label>
+      </ion-chip>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let penjual of penjualList" [routerLink]="['/makanan', penjual.id_user]">
+    <ion-slides pager>
+      <ion-slide *ngFor="let img of penjual.images">
+        <img src={{img}}>
+      </ion-slide>
+    </ion-slides>
+    <ion-card-content>
+      <ion-card-title> {{penjual.nama}}</ion-card-title>
+      <p>{{penjual.deskripsi}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+
+<!-- <ion-item>
+    <ion-label>Category</ion-label>
+    <ion-select [(ngModel)]="categorySelected" (ionChange)="loadFurniture()" placeholder="Select One">
+      <ion-select-option value="1">ArmChair</ion-select-option>
+      <ion-select-option value="2">Sofa</ion-select-option>
+    </ion-select>
+  </ion-item> -->

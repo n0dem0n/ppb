@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+        <ion-label>Makanan</ion-label>
+        <ion-label>Harga</ion-label>
+        <ion-label>Pilih</ion-label>
+    </ion-item>
+    <ion-item *ngFor="let menu of menuList">
+      <ion-label>{{menu.nama_menu}}</ion-label>
+      <ion-label>Rp. {{menu.harga_menu}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="menu.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
